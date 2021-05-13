@@ -1,37 +1,34 @@
 package services;
 
 import javax.ws.rs.Consumes;
-import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-import model.Client;
-import model.Quote;
-import repository.CrmRepository;
+import DAO.ClientDAO;
+import DAO.QuoteDAO;
+import entities.Client;
+import entities.Quote;
 
 @Path("/service")
 public class ServiceImpl {
- private CrmRepository repository = new CrmRepository();
- 
+ ClientDAO clientDAO = new ClientDAO();
+ QuoteDAO quoteDAO = new QuoteDAO();
  	@POST
-	@Path("/client")	
+	@Path("/GenerateClient")	
 	@Consumes({MediaType.APPLICATION_JSON})
  	@Produces({MediaType.APPLICATION_JSON})
-	public Client subscribe(Client client) {		
- 		
- 		return client;		
+	public boolean GenerateClient(Client client) {		
+ 		return clientDAO.addClient(client);		
  	}
  
 	@POST
-	@Path("/quote/{clientid}")	
+	@Path("/quote}")	
 	@Consumes({MediaType.APPLICATION_JSON})
  	@Produces({MediaType.APPLICATION_JSON})
-	public Quote generateQuote(@PathParam("clientid")int client) {
-		Quote quote = new Quote();
- 		return quote;		
+	public boolean generateQuote(Quote quote) {
+ 		return quoteDAO.generateQuote(quote);		
  	}
 	
 }
