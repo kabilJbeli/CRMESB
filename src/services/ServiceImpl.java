@@ -18,15 +18,13 @@ public class ServiceImpl {
  	@POST
 	@Path("/GenerateClient")	
 	@Consumes({MediaType.APPLICATION_JSON})
- 	@Produces({MediaType.APPLICATION_JSON})
 	public boolean GenerateClient(Client client) {		
  		return clientDAO.addClient(client);		
  	}
  
 	@POST
-	@Path("/quote}")	
+	@Path("/GenerateQuote")	
 	@Consumes({MediaType.APPLICATION_JSON})
- 	@Produces({MediaType.APPLICATION_JSON})
 	public boolean generateQuote(Quote quote) {
  		return quoteDAO.generateQuote(quote);		
  	}

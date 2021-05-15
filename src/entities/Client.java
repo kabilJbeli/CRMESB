@@ -22,6 +22,10 @@ public class Client implements Serializable {
 
 	private String clientname;
 
+	private String countrycode;
+
+	private String telephonenumber;
+
 	//bi-directional many-to-one association to Quote
 	@OneToMany(mappedBy="client")
 	private List<Quote> quotes;
@@ -51,6 +55,22 @@ public class Client implements Serializable {
 
 	public void setClientname(String clientname) {
 		this.clientname = clientname;
+	}
+
+	public String getCountrycode() {
+		return this.countrycode;
+	}
+
+	public void setCountrycode(String countrycode) {
+		this.countrycode = countrycode;
+	}
+
+	public String getTelephonenumber() {
+		return this.telephonenumber;
+	}
+
+	public void setTelephonenumber(String telephonenumber) {
+		this.telephonenumber = telephonenumber;
 	}
 
 	public List<Quote> getQuotes() {

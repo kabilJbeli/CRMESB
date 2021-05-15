@@ -8,7 +8,7 @@ public class connexion {
 	private static EntityManager entityManager;
 	public static EntityManager getEntityManager() {
 		if(entityManager==null) {
-			 EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("crmSOAP");
+			 EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("crmREST");
 			 entityManager =entityManagerFactory.createEntityManager();
 		}
 		return entityManager;

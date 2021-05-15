@@ -18,11 +18,15 @@ public class Quote implements Serializable {
 	@GeneratedValue(strategy=GenerationType.AUTO) 
 	private int idquote;
 
+	private String deviseCode;
+
 	private BigDecimal productprice;
 
 	private String prooductname;
 
 	private BigDecimal quote;
+
+	private String quotecol;
 
 	private int totalitems;
 
@@ -40,6 +44,14 @@ public class Quote implements Serializable {
 
 	public void setIdquote(int idquote) {
 		this.idquote = idquote;
+	}
+
+	public String getDeviseCode() {
+		return this.deviseCode;
+	}
+
+	public void setDeviseCode(String deviseCode) {
+		this.deviseCode = deviseCode;
 	}
 
 	public BigDecimal getProductprice() {
@@ -64,6 +76,14 @@ public class Quote implements Serializable {
 
 	public void setQuote(BigDecimal quote) {
 		this.quote = quote;
+	}
+
+	public String getQuotecol() {
+		return this.quotecol;
+	}
+
+	public void setQuotecol(String quotecol) {
+		this.quotecol = quotecol;
 	}
 
 	public int getTotalitems() {
